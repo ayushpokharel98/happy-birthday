@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Dec26 from '../assets/pictures/dec-26.jpg'
 import FirstPhoto from '../assets/pictures/first-photo.jpg';
 import FarewellPhoto from '../assets/pictures/farewell-photo.jpg';
@@ -9,7 +9,12 @@ import FirstHug from "../assets/pictures/first-hug.jpg"
 import FirstBouquetPhoto from "../assets/pictures/first-bouquet.jpg"
 import BirthdayPhoto from "../assets/pictures/my-birthday.jpg"
 import PemaPhoto from "../assets/pictures/pema.jpg"
+import Heart from '../assets/Heart';
+
 const Gallery = ({onFinish}) => {
+    useEffect(()=>{
+        Heart();
+    }, [])
     const images = [Dec26, FirstPhoto, FarewellPhoto, SecondPhoto, Photo1, ProposePhoto, FirstHug, FirstBouquetPhoto, BirthdayPhoto, PemaPhoto]
     const captions = [
         "December 26!! The day I first saw you outside of school premises and couldn't resist but to text you!😭",
