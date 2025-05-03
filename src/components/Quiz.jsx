@@ -81,7 +81,7 @@ const Quiz = ({ onFinish }) => {
             {
                 !clicked && (
                     <div className="min-h-screen w-full text-black bg-pink-100 flex flex-col justify-center items-center p-4 text-center">
-                        <p>Now lets play do a little quiz session!! Shall we??</p>
+                        <p>Now lets do a little quiz session!! Shall we??</p>
                         <div className="btns flex justify-center items-center gap-3 mt-3">
                             <button onClick={() => setClicked(true)} className='p-2 w-12 bg-green-400 hover:bg-green-500 hover:cursor-pointer rounded-2xl'>YES</button>
                             <button onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className='p-2 w-12 bg-red-400 hover:bg-red-500 hover:cursor-not-allowed rounded-2xl'>NO</button>
