@@ -98,7 +98,7 @@ const App = () => {
                 className="bg-white/20 backdrop-blur-sm px-8 py-3 rounded-full font-semibold text-lg hover:bg-white/30 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2 opacity-0 animate-entrance animate-delay-3"
               >
                 <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-                  Continue, My Princess!
+                  Click your little cursor right here my princess! ❤️
                 </span>
               </button>
             </div>
