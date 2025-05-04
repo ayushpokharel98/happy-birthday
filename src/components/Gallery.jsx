@@ -29,16 +29,19 @@ const Gallery = ({onFinish}) => {
         "Our first selfie together!!📸"
     ]
     const [index, setIndex] = useState(0);
+    const [count, setCount] = useState(0)
     const [direction, setDirection] = useState("next");
     const [start, setStart] = useState(false);
     const [slideEnd, setSlideEnd] = useState(true);
     const nextImage = () => {
         setDirection("next");
         setIndex((prev) => (prev + 1) % images.length);
+        setCount(prev=>prev+1);
     };
     const prevImage = () => {
         setDirection("prev");
         setIndex((prev) => (prev - 1 + images.length) % images.length)
+        setCount(prev=>prev-1);
     };
     return (
         <div className="h-screen w-full bg-gradient-to-br from-purple-200 to-pink-300 flex flex-col justify-center items-center p-4">
@@ -76,10 +79,10 @@ const Gallery = ({onFinish}) => {
                                             ⬅️ Previous
                                         </button>
                                         <button
-                                            onClick={index === images.length - 1 ? setSlideEnd(false) : nextImage}
+                                            onClick={count === images.length ? setSlideEnd(false) : nextImage}
                                             className="bg-white text-black px-4 py-2 rounded-xl hover:bg-gray-200 hover:cursor-pointer"
                                         >
-                                            {index === images.length - 1 ? "Finish ➡️" : "Next ➡️"}
+                                            {index === images.length-1 ? "Finish ➡️" : "Next ➡️"}
 
                                         </button>
                                     </div>

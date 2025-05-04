@@ -99,6 +99,9 @@ const App = () => {
               >
                 <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
                   Click your little cursor right here my princess! ❤️
+                  {
+                    count === texts.length-1 && ("(Ajhaii xa haii!!)")
+                  }
                 </span>
               </button>
             </div>
