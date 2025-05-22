@@ -9,13 +9,12 @@ import FirstHug from "../assets/pictures/first-hug.jpg"
 import FirstBouquetPhoto from "../assets/pictures/first-bouquet.jpg"
 import BirthdayPhoto from "../assets/pictures/my-birthday.jpg"
 import PemaPhoto from "../assets/pictures/pema.jpg"
+import MMPhoto from "../assets/pictures/mm.jpg"
+import OishiPhoto from '../assets/pictures/oishi.jpg'
 import Heart from '../assets/Heart';
 
 const Gallery = ({onFinish}) => {
-    useEffect(()=>{
-        Heart();
-    }, [])
-    const images = [Dec26, FirstPhoto, FarewellPhoto, SecondPhoto, Photo1, ProposePhoto, FirstHug, FirstBouquetPhoto, BirthdayPhoto, PemaPhoto]
+    const images = [Dec26, FirstPhoto, FarewellPhoto, SecondPhoto, Photo1, ProposePhoto, FirstHug, FirstBouquetPhoto, BirthdayPhoto, PemaPhoto, MMPhoto, OishiPhoto]
     const captions = [
         "December 26!! The day I first saw you outside of school premises and couldn't resist but to text you!😭",
         "Our first picture together 💖 Both unaware of what we'll write together in the upcoming days!",
@@ -26,7 +25,9 @@ const Gallery = ({onFinish}) => {
         "Our First Hug!! I'll never forget this moment! Your arms feels like the safest place to be, heaven on earth, HOME!🫂🤗",
         "My personal flower with the bouquet, wearing the ring I proposed you with! 💗",
         "Us in my birthday! 🎂",
-        "Our first selfie together!!📸"
+        "Our first selfie together!!📸",
+        "In the mirror maze, day filled with FUN!",
+        "I will remember this day forever 😭💋"
     ]
     const [index, setIndex] = useState(0);
     const [count, setCount] = useState(0)

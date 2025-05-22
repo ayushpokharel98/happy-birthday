@@ -1,0 +1,4 @@
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(var(--rotate)); }
+  50% { transform: translateY(-5px) rotate(var(--rotate)); }
+}

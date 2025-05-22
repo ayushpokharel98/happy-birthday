@@ -1,4 +1,4 @@
-const FinalPage = () => {
+const FinalPage = ({onFinish}) => {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-pink-200 to-red-100 flex flex-col items-center justify-center p-6 text-center text-rose-800">
@@ -16,7 +16,9 @@ const FinalPage = () => {
                 </p>
                 <p className="font-bold text-sm text-center font-mono mt-5">I LOVEEEEEEEEEEEEEEEEEEEEE YOUUUUUUUUUUUUU ❤️❤️❤️♾️</p> 
             </div>
-        
+            <div className="flex mt-2 items-center justify-center gap-1">
+                <p>If you want to play a little game </p> <button onClick={()=>onFinish()} className="bg-white text-black px-4 py-2 rounded-xl hover:bg-gray-200 hover:cursor-pointer">Click Here! 🥰</button>
+            </div>
         </div>
     );
 };

@@ -13,13 +13,24 @@ import Confetti from 'react-confetti';
 import { useWindowSize } from 'react-use';
 import HerPhoto from './assets/pictures/landing.jpg'
 import Balloon from './assets/pictures/balloon.png'
+import Game from './components/Game';
+import Heart from './assets/Heart';
 const App = () => {
   const [count, setCount] = useState(0);
   const [fadeKey, setFadeKey] = useState(0);
   const [quizFinished, setQuizFinished] = useState(false);
   const [galleryFinished, setGalleryFinished] = useState(false);
+  const [game, setGame] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
   const { width, height } = useWindowSize()
+
+  useEffect(() => {
+    if (quizFinished || galleryFinished) {
+      Heart();
+    }
+  }, [quizFinished, galleryFinished]);
+
+
   const handleClick = () => {
     if (!hasInteracted) setHasInteracted(true);
     setCount(prev => prev + 1);
@@ -30,14 +41,16 @@ const App = () => {
     if (count < texts.length) return "intro";
     if (!quizFinished) return "quiz";
     if (!galleryFinished) return "gallery";
-    return "final";
+    if (!game) return "final";
+    return "finished";
   };
 
   const getMusicSrc = () => {
     if (count < texts.length) return birthdayTone;
     if (!quizFinished) return quizTone;
     if (!galleryFinished) return galleryTone;
-    return finalToone;
+    if (!game) return finalToone;
+    return null;
   };
 
   return (
@@ -45,7 +58,7 @@ const App = () => {
       <BackgroundMusic
         key={getMusicKey()}
         src={getMusicSrc()}
-        playOn={hasInteracted || quizFinished || galleryFinished}
+        playOn={hasInteracted || quizFinished || galleryFinished || game}
       />
 
       {count < texts.length ? (
@@ -100,7 +113,7 @@ const App = () => {
                 <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
                   Click your little cursor right here my princess! ❤️
                   {
-                    count === texts.length-1 && ("(Ajhaii xa haii!!)")
+                    count === texts.length - 1 && ("(Ajhaii xa haii!!)")
                   }
                 </span>
               </button>
@@ -111,8 +124,10 @@ const App = () => {
         <Quiz onFinish={() => setQuizFinished(true)} />
       ) : !galleryFinished ? (
         <Gallery onFinish={() => setGalleryFinished(true)} />
+      ) : !game ? (
+        <FinalPage onFinish={() => setGame(true)} />
       ) : (
-        <FinalPage />
+        <Game />
       )}
     </>
   );
