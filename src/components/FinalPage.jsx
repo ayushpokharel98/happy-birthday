@@ -11,9 +11,11 @@ const FinalPage = ({onFinish}) => {
                 <p className="mt-4">
                     This birthday surprise was just a tiny way to show how much you mean to me. I hope it brought a smile to your face. 😊
                 </p>
-                <p className="mt-4 italic">
-                    I love you more than words could ever possibly say. Forever yours, with all my heart. ❤️
+
+                <p className="mt-4">
+                    Again, HAPPPYYY BIRTHDAYYYYYYYYY 🎂🥳🥳
                 </p>
+
                 <p className="font-bold text-sm text-center font-mono mt-5">I LOVEEEEEEEEEEEEEEEEEEEEE YOUUUUUUUUUUUUU ❤️❤️❤️♾️</p> 
             </div>
             <div className="flex mt-2 items-center justify-center gap-1">
